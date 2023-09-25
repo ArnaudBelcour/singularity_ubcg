@@ -13,3 +13,5 @@ Clone this repository, put the files from UBCG (UBCG.jar, programPath, UBCG.hmm)
 Call UBCG from the singularity using the command line:
 
 ```singularity exec ubcg2.sif java -jar /programs/UBCG.jar extract -i input_genome_fasta_file -bcg_dir output_ubcg_folder -label organism_name```
+
+```singularity exec ubcg2.sif java -jar /programs/UBCG.jar align -ucg_dir output_ubcg_folder -run_id mytest1 -leaf uid,label```
