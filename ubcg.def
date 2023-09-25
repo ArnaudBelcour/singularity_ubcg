@@ -1,0 +1,27 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%files
+     UBCG.jar /opt
+     programPath /opt
+     UBCG.hmm /opt
+
+%post
+     apt-get -y update && \
+     DEBIAN_FRONTEND=noninteractive apt-get install -y \
+     openjdk-8-jre \
+     openjdk-8-jre-headless \
+     hmmer \
+     prodigal \
+     mafft \
+     raxml \
+     fasttree \
+     libxm4; \
+     apt-get clean; \
+     apt-get purge; \
+     mkdir programs;\
+     cd /programs ;\
+     mv /opt/UBCG.jar /programs ;\
+     mv /opt/programPath /programs ;\
+     mv /opt/UBCG.hmm /programs
+
